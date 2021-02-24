@@ -1,0 +1,86 @@
+.main-outer {
+    padding: 0px 18px;
+}
+
+
+.table-sect {
+    overflow-x: scroll;
+}
+
+.mat-form-field {
+    display: block;
+    padding: 8px !important;
+}
+
+.card {
+    width: 100%;
+}
+
+.card-header {
+    color: whitesmoke;
+    font-weight: 900;
+    background-color:#495057;
+}
+.add-sect {
+    float: right;
+    margin-top: 6px;
+    font-size: 18px;
+}
+
+.btn-color {
+    margin-top: 6px;
+    color: #ffff;
+    background-color: #007bff;
+}
+
+.receipt {
+    padding: 4px;
+    cursor: pointer;
+    color: green;
+    text-decoration: underline;
+}
+.sbt-btn {
+    padding-top: 14px;
+}
+.sbt-button {
+    min-width: 120px;
+    background-color: #495057;
+}
+
+.active-class {
+    color: green;
+    cursor: none;
+    // font-weight: bolder;
+}
+.blocked-class {
+    color: red;
+    cursor: pointer;
+    // font-weight: bolder;
+}
+
+.tabel-header {
+    text-align: center;
+    margin-bottom: 12px;
+    color:#28a745;
+    font-weight: bolder;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+      padding: 18px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    padding: 4px 12px 4px 12px !important;
+    font-size: 12px;
+    min-width: 92px;
+  }
+
+.action-icon {
+    cursor: pointer !important;
+}

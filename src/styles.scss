@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-dialog-container {
+  padding: 0px !important;
+}
+
+.mat-icon {
+    vertical-align: middle;
+  }
+
+
+.alert-messages {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.info-message-class {
+    background-color: #15839826;
+    color: #136b7b;
+}
+
+.success-msg-class {
+  color: #1c9c38;
+  background: #13a31a1a;
+  
+}
+
+.error-msg-class {
+    color: #b4222a;
+    background-color: #b4222a24;
+}
+
+
+.pending-text-class {
+  color: #beb241;
+}
+
+.success-text-class {
+color: #1c9c38;
+}
+
+.error-text-class {
+  color: #b4222a;
+}

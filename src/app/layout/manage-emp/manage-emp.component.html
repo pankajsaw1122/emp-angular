@@ -1,0 +1,139 @@
+<div>
+  <div class="row main-outer">
+    <div class="card">
+      <div class="card-header">
+        <mat-icon>people</mat-icon>
+        Employees
+      </div>
+      <div class="card-block">
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="add-sect">
+                <button mat-raised-button class="btn-color" (click)="addAccount()">
+                  <mat-icon>add</mat-icon>
+                  <span>Add Employee</span>
+                </button>
+              </div>
+            </div>
+            <div class="container-fluid">
+              <mat-form-field>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="mat-elevation-z8 table-sect">
+            <table mat-table [dataSource]="dataSource" matSort>
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+
+              <!-- Progress Column -->
+              <ng-container matColumnDef="fname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.fname}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="lname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.lname}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="depart_name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
+                <td mat-cell *matCellDef="let row"> {{row.depart_name}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="design_name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Designation </th>
+                <td mat-cell *matCellDef="let row"> {{row.design_name}} </td>
+              </ng-container>
+
+             <ng-container matColumnDef="basic">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Basic </th>
+                <td mat-cell *matCellDef="let row"> {{row.basic }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="hra">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> HRA </th>
+                <td mat-cell *matCellDef="let row">
+                  {{row.hra}}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="gross_salary">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Gross Salary </th>
+                <td mat-cell *matCellDef="let row">
+                  {{row.gross_salary }}
+                </td>
+              </ng-container>
+
+                <ng-container matColumnDef="pf">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> P.F </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{row.pf }}
+                  </td>
+                </ng-container>
+
+              <ng-container matColumnDef="esi">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> E.S.I </th>
+                <td mat-cell *matCellDef="let row">
+                  {{row.esi }}
+                </td>
+              </ng-container>
+
+                <ng-container matColumnDef="total_deduct">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Deduct </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{row.total_deduct }}
+                  </td>
+                </ng-container> 
+
+                <ng-container matColumnDef="net_salary">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Net Salary </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{row.net_salary }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="hire_date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Hiring Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.hire_date | date: 'dd-MM -yyyy'}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="end_date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> End Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.end_date | date: 'dd-MM -yyyy'}} </td>
+              </ng-container>
+
+              <!-- Color Column -->
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                <td mat-cell *matCellDef="let row">
+                  <i class="material-icons action-icon" (click)="onEditClick(row.id)">
+                    edit
+                  </i>
+                  &nbsp;
+                  <i class="material-icons action-icon" (click)="onDeleteClick(row.id)">
+                    delete
+                  </i></td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+              </tr>
+            </table>
+
+            <mat-paginator [length]="resultsLength" [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

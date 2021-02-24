@@ -1,0 +1,14 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+  <mat-nav-list role="navigation">
+    <a mat-list-item routerLink="/dashboard" [routerLinkActive]="['router-link-active']">
+      <mat-icon>dashboard</mat-icon>
+      &nbsp;&nbsp; Dashboard
+    </a>
+  </mat-nav-list>
+  <mat-nav-list role="navigation">
+    <a mat-list-item routerLink="/manage-emp" [routerLinkActive]="['router-link-active']">
+      <mat-icon>people</mat-icon>
+      &nbsp;&nbsp; Manage Employee
+    </a>
+  </mat-nav-list>
+</nav>

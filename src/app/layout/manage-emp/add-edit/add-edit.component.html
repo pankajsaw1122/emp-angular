@@ -1,0 +1,134 @@
+<div>
+  <div class="row form-outer">
+    <div class="card">
+      <div class="card-header">
+        {{text}}
+      </div>
+
+      <div class="card-block">
+        <div class="container-fluid top-pad">
+          <form [formGroup]="addEditEmployee" (ngSubmit)="onSubmit()">
+            <div class="form-content">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="First Name" formControlName="fname">
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Last Name" formControlName="lname">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <mat-label>Select Department</mat-label>
+                        <mat-select (ngModelChange)="onDepartSelect()" formControlName="department_id">
+                          <mat-option *ngFor="let list of departList" [value]="list.id">
+                            {{list.name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <mat-label>Select Designation</mat-label>
+                        <mat-select formControlName="designation_id">
+                          <mat-option *ngFor="let list of designList" [value]="list.id">
+                            {{list.name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input type="number" matInput placeholder="Basic Salary" formControlName="basic">
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input type="number" matInput placeholder="HRA" formControlName="hra">
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input type="number" matInput placeholder="Provident Fund" formControlName="pf">
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input type="number" matInput placeholder="E.S.I" formControlName="esi">
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Choose a hiring date" [matDatepicker]="picker1"
+                          formControlName="hiring_date">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Choose a end date" [matDatepicker]="picker2"
+                          formControlName="end_date">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="btn-section">
+                <button type="submit" class="update-btn" [disabled]="!addEditEmployee.valid" mat-raised-button
+                  color="primary">{{ text }}</button>
+                <button type="button" class="back-btn" mat-raised-button color="primary"
+                  routerLink="/manage-emp">Back</button>
+              </div>
+              <div class="alert-messages">
+                <div *ngIf="message.msgtext !== ''"
+                  [ngClass]="message.msgColor == 0 ? 'info-message-class' : message.msgColor == 1 ? 'success-msg-class' : 'error-msg-class'">
+                  {{message.msgtext}}</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
